@@ -9,7 +9,7 @@ def AutoNoiseFilter(analyzer, year, isData):
         analyzer.Cut("NoiseFilters", filterString)
         if (year == "2022" or year == "2022EE" or year == "2023" or year == "2023BPix") and isData:
             analyzer.Cut("ecalBadCalibFilter", "ecalBadCalibFilterRecipe(run,  PuppiMET_pt, PuppiMET_phi,  nJet, Jet_pt, Jet_eta, Jet_phi, Jet_neEmEF, Jet_chEmEF)")
-        elif year == 2024:
+        elif year == "2024":
             analyzer.Cut("ecalBadCalibFilter", "Flag_ecalBadCalibFilter == 1")
     else:
         raise ValueError("Only years of Run3 is supported by the moment.")
